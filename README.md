@@ -17,7 +17,7 @@
 ![Version][version-image]
 
 # Keep in Touch
-In the project work a progressive web application for Android and IOS was created, which allows users to share text-based content with a contact list. The app contains a registration and a login, but no unnecessary sensitive data is required. All stored data is managed via a REST-Api in connection with a MySQL database. As a registered user I can write and share text messages. Users can be found via a username and can be added to a friends list and removed later. All people who are in the app's own contact list can view and read content from me. 
+n this project work a progressive web application for Android and IOS was created, which allows users to share text-based content with a contact list. The app contains a registration and a login, but no unnecessary sensitive data is required. All stored data is managed via a REST-Api in connection with a MySQL database. As a registered user I can write and share text messages. Users can be found via a username and can be added to a friends list and removed later. All people who are in the app's own contact list can view and read content from me. 
 
 For the app we will develop a user-friendly Ionic frontend, which is especially designed for mobile users. It will be extended by a backend for data management. The backend will be realized via the framework Spring Boot, which runs in a docker container environment and manages the user generated data via a MySQL database.
 
