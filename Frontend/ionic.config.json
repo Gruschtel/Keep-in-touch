@@ -1,0 +1,7 @@
+{
+  "name": "Keep-in-touch",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

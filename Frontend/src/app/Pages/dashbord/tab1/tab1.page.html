@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="white" (click)="logout()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Follower</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="white" (click)="refreshFriends()">
+        <ion-icon slot="end" name="refresh"></ion-icon>
+      </ion-button>
+
+      <ion-button color="white" (click)="addFriend()">
+        <ion-icon slot="end" name="person-add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let key of friends; let i = index">
+    <ion-card
+      style="
+        padding: 10px;
+        margin-bottom: -4px;
+        margin-top: -4px;
+        background-color: rgb(233, 230, 230);
+      "
+    >
+      <div style="margin-top: 7px; float: left; color: black;"><b>{{key.username}}</b></div>
+      <button style="float: right;" class="myButton" (click)="delete(key.id)">
+        delete
+      </button>
+    </ion-card>
+  </ion-list>
+</ion-content>

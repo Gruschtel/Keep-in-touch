@@ -1,0 +1,21 @@
+%
+% Inhaltsverzeichnis
+%
+% https://golatex.de/inhaltsverzeichnis-von-tex-als-lesezeichen-in-der-pdf-t1967.html
+% Damit erscheint das Inhaltsverzeichnis als Lesezeichen in einem PDF Reader!! Jedoch nicht
+% als Eintrag im Inhaltsverzeichnis selbst!!!!!
+\pdfbookmark{\contentsname}{toc}\tableofcontents
+%
+% Abkürzungen
+%
+\printnomenclature 
+% Im Text etcA.\abk{etcA.}{et cetera}
+% MakeIndex nicht vergessen!!!!!
+%
+% Abbildungsverzeichnis
+%
+\listoffigures
+%
+% Tabellenverzeichnis
+% Auskommentieren um Tabellenverzeichnis anzuzeigen
+\listoftables

@@ -1,0 +1,88 @@
+% Header mit Deklarationen
+\input{Config/Header}
+\input{Config/Variablen}
+\input{Config/Farben}
+\input{Config/Abkuerzungen}
+%
+% Start document
+%
+\begin{document}  
+% Roemische Nummerierung fuer Sonderseiten, wie Verzeichnisse und Anhang
+\pagenumbering{Roman}
+% Titelblatt
+\input{Extras/Titelseite}
+% Kopfzeile und Fußzeile
+\ihead{\leftmark}
+\ohead{}
+%
+%\input{Extras/KurzfassungAbstract}
+%\input{Extras/Erklarung}
+%\input{Extras/Sperrvermerk}
+%
+% Inhaltsverzeichnis
+%
+% https://golatex.de/inhaltsverzeichnis-von-tex-als-lesezeichen-in-der-pdf-t1967.html
+% Damit erscheint das Inhaltsverzeichnis als Lesezeichen in einem PDF Reader!! Jedoch nicht
+% als Eintrag im Inhaltsverzeichnis selbst!!!!!
+\pdfbookmark{\contentsname}{toc}\tableofcontents
+%
+%
+% Abkürzungen
+%
+\printnomenclature 
+% Im Text etcA.\abk{etcA.}{et cetera}
+% MakeIndex nicht vergessen!!!!!
+%
+%------
+% Merke die roemische Seitenzahl in 'roemisch' und setzte Nummerierung 
+% auf arabisch fuer die eigentlichen Kapitel
+\newcounter{roemisch}
+\setcounter{roemisch}{\value{page}}
+\cleardoublepage
+\pagenumbering{arabic}
+%
+%
+\input{Kapitel/kapitel_1}
+
+%
+% Abbildungsverzeichnis
+%
+%\listoffigures
+%
+% Tabellenverzeichnis
+%
+%
+%\listoftables
+%
+%
+%
+% Listingverzeichnis
+%
+%\lstlistoflistings
+%
+%
+%
+% Literaturverzeichnis
+% !!! Erst BibText laufen lassen!! Dann Schnelles Übersetzten
+% Die Bibligrafie ist der erste Anhang
+\begin{flushleft}
+\printbibliography[heading=bibintoc, title=Literaturverzeichnis]
+\end{flushleft}
+%
+% Setze Numerierung wieder auf r�misch zur�ck und setzte von oben fort
+% Wert ist demnach der von 'roemisch'
+% Wenn two-page
+%\cleardoublepage
+%\clearpage
+\pagenumbering{Roman}{}
+\setcounter{page}{\value{roemisch}+1}
+% Wenn two-page
+%\setcounter{page}{\value{roemisch}+2}
+% Appendix, falls vorhanden
+\appendix
+%
+% Anhang
+%
+\captionsetup{listof=false}
+%\input{Kapitel/Anhang}
+\end{document}

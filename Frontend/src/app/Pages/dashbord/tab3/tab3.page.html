@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="white" (click)="logout()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Profile</ion-title>
+    <!-- 
+    <ion-buttons slot="end">
+      <ion-button color="white" (click)="settings()">
+        <ion-icon slot="end" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form [formGroup]="ionicFormUpdate" novalidate>
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <ion-item lines="full">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="username" type="text"></ion-input>
+      </ion-item>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.username.errors?.required"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Name is required.<br />
+      </span>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.username.errors?.minlength"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Name should be min. 3 chars long.<br />
+      </span>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.username.errors?.maxlength"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Name should be max. 25 chars long.<br />
+      </span>
+
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.username.errors?.validUsernameExisting"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        The selected username is already in use!<br />
+      </span>
+
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          formControlName="password"
+          type="password"
+          [type]="passwordType"
+        ></ion-input>
+        <ion-icon
+          class="passwordIcon"
+          name="eye"
+          [name]="passwordIcon"
+          slot="end"
+          (click)="hideShowPassword()"
+        ></ion-icon>
+      </ion-item>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.password.errors?.validPassword"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Contains at least 1 capital letter, 1 lower case letter, 1 digit, 1
+        special character and has a length of at least 5<br />
+      </span>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.password.errors?.minlength"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Name should be min. 5 chars long.<br />
+      </span>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.password.errors?.required"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Password is required.<br />
+      </span>
+      <!-- -->
+      <!-- -->
+      <!-- -->
+
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.email.errors?.required"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Email is required.<br />
+      </span>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.email.errors?.pattern"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Please provide valid email id.<br />
+      </span>
+
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.email.errors?.validEmailExisting"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        The selected email is already in use!<br />
+      </span>
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <ion-item lines="full">
+        <ion-label position="floating">Birthday</ion-label>
+        <ion-datetime
+          (ionChange)="getDate($event)"
+          formControlName="dob"
+          [value]="defaultDate"
+          picker-format="MMMM D YYYY"
+        ></ion-datetime>
+      </ion-item>
+      <span
+        class="error ion-padding"
+        *ngIf="isSubmitted && errorControl.dob.errors?.validBirthday"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+        You must be at least 18 years old to use this service!<br />
+      </span>
+
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <br />
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block" (click)="submitForm()">Update</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

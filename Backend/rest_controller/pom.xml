@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- -->
+	<!-- Parent -->
+	<!-- -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.1.RELEASE</version>
+		<relativePath/>
+		<!-- lookup parent from repository -->
+	</parent>
+
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<groupId>de.touch</groupId>
+	<artifactId>mobile_api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>keep_in_touch</name>
+	<description>Demo project for Spring Boot Docker Compose</description>
+
+	<!-- -->
+	<!-- Properties -->
+	<!-- -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<docker.image.prefix>touch</docker.image.prefix>
+	</properties>
+
+	<!-- -->
+	<!-- Dependencies -->
+	<!-- -->
+	<dependencies>
+
+		<!-- boot-starter-web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- mysql-connector -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- boot-starter-test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Since Java 9 the API has been removed from the SE -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+
+		<!-- JWT -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+	</dependencies>
+
+	<!-- -->
+	<!-- Plugins -->
+	<!-- -->
+	<build>
+		<plugins>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+				<verbose>true</verbose>
+				<fork>true</fork>
+				<!-- !!!!!!!!!!!!!!!!!!!!!!!! -->
+				<!-- GEGEBENFALLS PFAD ÄNDERN -->
+				<!-- !!!!!!!!!!!!!!!!!!!!!!!! -->
+				<executable>C:\Program Files\Java\jdk1.8.0_241\bin\javac</executable>
+				<compilerVersion>1.8</compilerVersion>
+				</configuration>
+        	</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>keep_in_touch</finalName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Message verfassen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="ion-padding">
+    <div class="vertical10">
+      <ion-item>
+        <ion-label position="floating">Message</ion-label>
+        <ion-textarea  type="text" [(ngModel)]="message_field"></ion-textarea >
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="horizontalCenter vertical10">
+    <ion-button (click)="add()" class="login">Add Message</ion-button>
+  </div>
+
+</ion-content>

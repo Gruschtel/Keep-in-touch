@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="white" (click)="logout()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Keep in touch</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="white" (click)="refreshMessage()">
+        <ion-icon slot="end" name="refresh"></ion-icon>
+      </ion-button>
+
+      <ion-button color="white" (click)="newMessage()">
+        <ion-icon slot="end" src="/assets/add_comment.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let key of messages">
+    <ion-card
+      style="
+        padding: 10px;
+        margin-bottom: -4px;
+        margin-top: -4px;
+        background-color: rgb(233, 230, 230);
+      "
+    >
+      <div style="float: right;">{{key.date}}</div>
+      <div style="color: black;"><b>{{key.username}}</b></div>
+      <p style="color: black;">{{key.message}}</p>
+    </ion-card>
+  </ion-list>
+</ion-content>

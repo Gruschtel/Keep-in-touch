@@ -1,0 +1,49 @@
+\section{Ionic}\label{IonicInstal}
+
+Um eine Ionic-Anwendung zu programmieren wird neben einer Entwicklungsumgebung lediglich NodeJS und einige Erweiterungen benötigt.
+
+\begin{enumerate}
+    \item Der erste Schritt ist das Herunterladen und Installieren von Node.JS. Sie finden Node.JS unter folgendem Link:
+    \href{https://nodejs.org/en/download/current/}{https://nodejs.org/en/download/current/}    
+    
+    \item Starten Sie nach der Installation von Node.JS die Eingabeaufforderung oder Windows PowerShell und geben Sie den Befehl \underline{npm --version} ein. Wenn Sie die aktuelle Versionsnummer sehen, wurde Node.JS korrekt installiert. 
+
+    \item  Nun müssen noch Ionic und Cordova installiert werden. Geben Sie zunächst an der Eingabeaufforderung \underline{npm install -g cordova} ein. Dadurch wird das Cordova-Framework installiert, das später für die Bereitstellung der Anwendung auf verschiedenen Plattformen benötigt wird. Danach benötigen Sie das Ionic-Framework, um Anwendungen in Ionic zu erstellen. Sie können Ionic mit dem Befehl \underline{npm install -g ionic} installieren. 
+    
+    \item Ionic unterstützt verschiedene Programmiersprachen. Standardmäßig werden Ionic-Anwendungen in JavaScript programmiert. Es ist jedoch auch möglich Ionic-Anwendungen in Angular, React oder Vue zu programmieren. Um Ionic-Anwendungen in anderen Sprachen programmieren zu können, müssen Sie auch die entsprechende CLI auf Ihrem System installieren. Für dieses Projekt wurde die TypScript-Sprache Angular genutzt. Um Angular zu installieren muss folgender Befehl eingegeben werden: \underline{npm install –g @angular/cli}  
+    
+    \item Nach der Installation von Angular starten Sie die Eingabeaufforderung oder Windows PowerShell und navigieren sich in den "Frontend" Ordner des Projektes. Führen Sie dort die folgenden Befehle aus:\\
+    -- \underline{npm install}\\
+    -- \underline{npm cache verify}\\
+    Mit diesen Befehlen installieren sie alle benötigten Abhängigkeiten für das kompilieren und ausführen von Ionic- beziehungsweise Angular-Anwendungen.
+
+    
+\end{enumerate}{}
+Im zweiten Schritt werden nun alle Plugins installieren, die Ionic zur Unterstützung von anderen Plattformen benötigt.
+
+\begin{enumerate}
+    \item Damit Ihre Ionic-Anwendung eine Plattform unterstützt, öffnen Sie zunächst die Eingabeaufforderung und wechseln Sie in das aktuelle Verzeichnis Ihres Ionic-Projekts. 
+    
+    \item Geben Sie folgenden Befehle ein um IOS als Ziel-Plattform hinzuzufügen: \underline{ionic cordova platform add ios}
+    \item Geben Sie folgenden Befehle ein um Android als Ziel-Plattform hinzuzufügen: \underline{ionic cordova platform add android}
+    \item Anschließend müssen noch die Ressourcen der Plattform hinzugefügt werden. Hierzu muss der Befehl \underline{npm install -g cordova-res} ausgeführt werden.
+    
+\end{enumerate}{}
+Zur Unterstützung der Anwendung direkt auf einem Android-Gerät werden noch einige Programme benötigt.
+
+\begin{enumerate}
+    \item  Zunächst benötigen Sie Android Studio. Eine Einführung in die Installation und Einrichtung finden Sie unter
+    \href{https://ionicframework.com/docs/developing/android}{https://ionicframework.com/docs/developing/android}
+    
+    \item Wurde Android Studie und alle benötigten Feature installiert, kann die Anwendung für Android Geräte gebuildet und anschließend verteilt werden. Dazu geben Sie den Befehlt \underline{ionic cordova build android} und anschließend \underline{ionic cordova emulate android} ein.\\\\
+    \textcolor{green}{Alternativ} zu einem Emulator können Sie auch Ihr eigenes Android-Smartphone über USB an Ihren PC anschließen und Ihre Ionic-App auf Ihrem eigenen Telefon installieren. Siehe: \href{https://javatutorial.net/connect-android-device-android-studio}{https://javatutorial.net/connect-android-device-android-studio}
+
+\end{enumerate}{}
+Zur Unterstützung der IOS-Plattform benötigen Sie einen Computer mit MAC-OS und installiertem XCode. Eine Einführung in die Installation und Einrichtung finden Sie unter: \href{https://ionicframework.com/docs/developing/ios}{https://ionicframework.com/docs/developing/ios}
+
+\subsection{Fehlerbehandlung}\label{IonicFehler}
+Ein häufiger Fehler der beim Verteilen beziehungsweise neu Einrichten von Ionic-Projekten passiert ist das Abhängigkeiten nicht korrekt aufgelöst werden können. Oft genügt es lediglich im Ordner "Frontend" die Datei \underline{package-lock.json} und den Ordner \underline{node\_modules} zu löschen und anschließend neu zu laden. Hierzu müssen folgende zwei Befehle über die Eingabeaufforderung oder PowerShell (im Projektordner) ausgeführt werden:\\
+-- npm install\\
+-- npm cache verify
+\\\\
+Ein weitere Fehler der auftreten kann ist, dass beim Builden von Android das Programm mit dem Fehler "Gradle could not be found." fehlschlägt. In diesem Fall müssen Sie Gradle Herunterladen laden, entpacken und wie in Kapitel \ref{SpringInstal} (ab Punkt 4) dem Build-Management-Tool Maven dem System über die Umgebungsvariablen bekannt machen. 
