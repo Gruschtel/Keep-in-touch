@@ -5,7 +5,7 @@
 
 [spring-image]: https://img.shields.io/badge/Spring-SpringBoot-00CD66.svg
 
-[spring-image]: https://img.shields.io/badge/Database-MySQL-FFC125.svg
+[database-image]: https://img.shields.io/badge/Database-MySQL-FFC125.svg
 
 [version-image]: https://img.shields.io/badge/Version-1.0-blue.svg
 
